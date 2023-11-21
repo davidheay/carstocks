@@ -13,7 +13,10 @@ public class Car
     [Required]
     public string Model { get; set; }
 
+    [Required]
     public int Year { get; set; }
+
+    [Required]
     public int Stock { get; set; }
 
     [JsonIgnore]

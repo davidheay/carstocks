@@ -34,7 +34,7 @@ public class CarController : ControllerBase
 
     [HttpPost(Name = "AddCar")]
     [ProducesResponseType(typeof(Car), StatusCodes.Status201Created)]
-    [ProducesResponseType(typeof(BadRequestObjectResult), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
     public IActionResult AddCar(int dealerId, [FromBody] Car car)
     {
         try
@@ -45,13 +45,13 @@ public class CarController : ControllerBase
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            return BadRequest(new Error(e.Message));
         }
     }
 
     [HttpDelete("{carId}", Name = "DeleteCar")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(typeof(BadRequestObjectResult), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
     public IActionResult DeleteCar(int dealerId, int carId)
     {
         try
@@ -61,13 +61,13 @@ public class CarController : ControllerBase
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            return BadRequest(new Error(e.Message));
         }
     }
 
     [HttpPut("{carId}", Name = "UpdateCar")]
     [ProducesResponseType(typeof(Car), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(BadRequestObjectResult), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
     public IActionResult UpdateStock(int dealerId, int carId, [FromBody] Car car)
     {
         try
@@ -79,11 +79,11 @@ public class CarController : ControllerBase
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            return BadRequest(new Error(e.Message));
         }
     }
 
-    [HttpGet("search",Name = "SearchByBrandModel")]
+    [HttpGet("search", Name = "SearchByBrandModel")]
     [ProducesResponseType(typeof(Car), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
     public IActionResult SearchByBrandModel(int dealerId, string brand, string model)
