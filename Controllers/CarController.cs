@@ -1,11 +1,14 @@
+using System.Security.Claims;
 using carstocks.models;
 using carstocks.services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace carstocks.Controllers;
 
 [ApiController]
 [Route("api/{dealerId}/cars")]
+[Authorize(Policy = "SameDealerPolicy")]
 public class CarController : ControllerBase
 {
     private readonly ILogger<CarController> _logger;

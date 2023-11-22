@@ -14,23 +14,23 @@ public class CarRepositoryMemory : ICarRepository
         Dealers = new List<Dealer>();
         Cars = new List<Car>();
 
-        Dealers.Add(new Dealer(1, "Elite Motors"));
-        Cars.Add(new Car(1, "Toyota", "Camry", 2020, 1, 5));
-        Cars.Add(new Car(2, "Toyota", "Corolla", 2013, 1, 2));
-        Cars.Add(new Car(3, "Toyota", "RAV4", 2021, 1, 4));
-        Cars.Add(new Car(4, "BMW", "3 Series", 2022, 1, 1));
+        Dealers.Add(new Dealer(1238979213, "Elite Motors"));
+        Cars.Add(new Car(1, "Toyota", "Camry", 2020, 1238979213, 5));
+        Cars.Add(new Car(2, "Toyota", "Corolla", 2013, 1238979213, 2));
+        Cars.Add(new Car(3, "Toyota", "RAV4", 2021, 1238979213, 4));
+        Cars.Add(new Car(4, "BMW", "3 Series", 2022, 1238979213, 1));
 
-        Dealers.Add(new Dealer(2, "Prestige Auto Group"));
-        Cars.Add(new Car(5, "Honda", "Civic", 2003, 2, 0));
-        Cars.Add(new Car(6, "Honda", "Accord", 2011, 2, 3));
-        Cars.Add(new Car(7, "Honda", "CR-V", 2000, 2, 2));
-        Cars.Add(new Car(8, "BMW", "5 Series", 2006, 2, 1));
+        Dealers.Add(new Dealer(24424314, "Prestige Auto Group"));
+        Cars.Add(new Car(5, "Honda", "Civic", 2003, 24424314, 0));
+        Cars.Add(new Car(6, "Honda", "Accord", 2011, 24424314, 3));
+        Cars.Add(new Car(7, "Honda", "CR-V", 2000, 24424314, 2));
+        Cars.Add(new Car(8, "BMW", "5 Series", 2006, 24424314, 1));
 
-        Dealers.Add(new Dealer(3, "Superior Cars Inc."));
-        Cars.Add(new Car(9, "Ford", "Mustang", 2003, 3, 1));
-        Cars.Add(new Car(10, "Ford", "F-150", 2006, 3, 1));
-        Cars.Add(new Car(11, "Ford", "Escape", 1982, 3, 2));
-        Cars.Add(new Car(12, "BMW", "X3", 2023, 3, 3));
+        Dealers.Add(new Dealer(3213152, "Superior Cars Inc."));
+        Cars.Add(new Car(9, "Ford", "Mustang", 2003, 3213152, 1));
+        Cars.Add(new Car(10, "Ford", "F-150", 2006, 3213152, 1));
+        Cars.Add(new Car(11, "Ford", "Escape", 1982, 3213152, 2));
+        Cars.Add(new Car(12, "BMW", "X3", 2023, 3213152, 3));
     }
     public List<Dealer> GetDealers()
     {
