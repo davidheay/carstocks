@@ -1,10 +1,13 @@
 using System.Text;
 using carstocks.Repository;
 using carstocks.services;
+using carstocks.Swagger;
 using carstocks.utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +43,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>,ConfigureSwaggerOptions>();
 builder.Services.AddSingleton<ICarService, CarService>();
 builder.Services.AddSingleton<ICarRepository, CarRepositoryMemory>();
 builder.Services.AddSingleton(typeof(JwtTokenGenerator), new JwtTokenGenerator(config));
